@@ -1,0 +1,90 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "description": "Rutas Backend de Contacto/Soporte",
+        "version": "1.0.0",
+        "title": "Backend Contact",
+        "contact": {
+            "name": "Jose Abarca",
+            "email": "abarcaj.me@gmail.com",
+            "url": "https://github.com/AbarcaJ"
+        }
+    },
+    "servers": [
+      {
+        "url": "http://localhost:5000/api",
+        "variables": {}
+      }
+    ],
+    "paths": {
+      "/contact": {
+        "post": {
+          "tags": [
+            "Contact"
+          ],
+          "summary": "Enviar Correo",
+          "operationId": "SendMail",
+          "parameters": [],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "encoding": {},
+                "schema": {
+                  "required": ["email", "name", "lastname", "subject", "message"],
+                  "type": "object",
+                  "properties": {
+                    "email": {
+                      "type": "string",
+                      "description": "Correo de contacto"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Nombre"
+                    },
+                    "lastname": {
+                      "type": "string",
+                      "description": "Apellido"
+                    },
+                    "subject": {
+                      "type": "string",
+                      "description": "Asunto"
+                    },
+                    "phone": {
+                      "type": "string",
+                      "description": "Telefono (Opcional)"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Mensaje"
+                    }
+                  }
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "status: 'success', message: 'New Email sent from.'"
+            },
+            "400": {
+                "description": "status: 'error', message: 'Bad request'"
+            },
+            "401": {
+                "description": "status: 'error', message: 'Un-authorized!'"
+            },
+            "500": {
+                "description": "status: 'error', message: 'Something looks wrong!!!'"
+            }
+          },
+          "deprecated": false
+        }
+      }
+    },
+    "tags": [
+      {
+        "name": "Contact",
+        "description": "Envio de Correos de Contacto.."
+      }
+    ]
+  }
