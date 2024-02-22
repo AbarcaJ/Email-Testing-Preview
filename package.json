@@ -13,14 +13,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KabaSys/IkusaMedia-BE-Contact.git"
+    "url": "git+https://github.com/AbarcaJ/Email-Testing-Preview.git"
   },
   "author": "Jose Abarca",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/KabaSys/IkusaMedia-BE-Contact/issues"
-  },
-  "homepage": "https://github.com/KabaSys/IkusaMedia-BE-Contact#readme",
   "devDependencies": {
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
